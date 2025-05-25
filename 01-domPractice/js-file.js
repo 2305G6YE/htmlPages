@@ -22,6 +22,3 @@ lowestBox.appendChild(box1);
 lowestBox.appendChild(box2);
 container.appendChild(lowestBox);
 //2nd section complete
-
-
-

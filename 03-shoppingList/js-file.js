@@ -1,12 +1,24 @@
-const list = document.createElement("li");
-const inline = document.createElement("span");
-const btn = document.createElement("button");
-list.appendChild(inline);
-list.appendChild(btn);
-inline.textContent = '${input}';
-btn.textContent = 'Delete';
-ul.appendChild(list);
-btn.addEventListener("click", () => {
-    list.remove();
+const list = document.querySelector("ul");
+const point = document.querySelector("input");
+const addBtn = document.querySelector("button");
+
+addBtn.addEventListener("click", () => { 
+    const savedItem = point.value;
+    point.value = '';
+
+    const listItem = document.createElement("li");
+    const inline = document.createElement("span");
+    const deleteBtn = document.createElement("button");
+
+    listItem.appendChild(inline);
+    listItem.appendChild(deleteBtn);
+    inline.textContent = savedItem;
+    deleteBtn.textContent = 'Delete';
+    list.appendChild(listItem);
+
+    deleteBtn.addEventListener("click", () => {
+        list.removeChild(listItem);
+    });
+
+    point.focus();
 });
-document.getElementById("item").focus();
